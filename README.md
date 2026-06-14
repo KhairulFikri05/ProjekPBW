@@ -168,17 +168,17 @@ Untuk mengakses Panel Admin Filament: `http://127.0.0.1:8000/admin`
 
 ### 1. Halaman Beranda & Katalog Menu
 <p align="center">
-  <img src="public/screenshots/home_menu.jpeg" alt="Beranda dan Menu" width="90%">
+  <img src="home_menu.jpeg" alt="Beranda dan Menu" width="90%">
 </p>
 
 ### 2. Modul Checkout & Pembayaran (Midtrans)
 <p align="center">
-  <img src="public/screenshots/checkout_midtrans.png" alt="Checkout Midtrans" width="90%">
+  <img src="checkout_midtrans.jpeg" alt="Checkout Midtrans" width="90%">
 </p>
 
 ### 3. Dasbor Admin (Filament PHP)
 <p align="center">
-  <img src="public/screenshots/admin_dashboard.png" alt="Admin Dashboard" width="90%">
+  <img src="admin_dashboard.jpeg" alt="Admin Dashboard" width="90%">
 </p>
 
 ---
