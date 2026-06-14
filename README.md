@@ -1,113 +1,103 @@
-# 🍽️ Kape Cihanjuang
+# SIM-C - Cafe Management System
 
-Aplikasi manajemen restoran berbasis web, dibangun dengan **Laravel 12** dan **Filament Admin v3**.
-Proyek ini dikembangkan oleh tim **mulaidigital.com** untuk membantu restoran mengelola menu, reservasi, galeri, testimoni pelanggan, event, dan konten lainnya melalui panel admin yang modern, elegan, dan responsif.
+<div align="center">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 12" />
+  <img src="https://img.shields.io/badge/Filament_PHP-EAB308?style=for-the-badge&logo=php&logoColor=white" alt="Filament PHP" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Midtrans-000000?style=for-the-badge&logo=midtrans&logoColor=white" alt="Midtrans" />
+</div>
 
----
+<br>
 
-## 🚀 Fitur Utama
-- Manajemen Menu & Kategori
-- Reservasi Online
-- Galeri & Event Terjadwal
-- Kontak & Lokasi
-- Testimoni Pelanggan
-- Dashboard Admin berbasis Filament
-- Desain Fully Responsive (mobile & desktop)
+**SIM-C (Sistem Informasi Manajemen Cafe)** adalah platform digital komprehensif berbasis web yang dirancang khusus untuk memodernisasi operasional cafe atau restoran. Sistem ini menghubungkan antarmuka pemesanan mandiri oleh pelanggan (seperti reservasi meja dan order pesanan) dengan panel administrasi *backend* yang tangguh untuk memantau transaksi secara *real-time*.
 
----
-
-## 👨‍💼 Developer
-- Nama: **[DENS]**
-- Email: deniekapratama07@gmail.com
+Aplikasi ini mengutamakan kecepatan layanan, akurasi pesanan di dapur, dan kemudahan rekapitulasi pembayaran otomatis guna menghindari kebocoran finansial kasir.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
-- Laravel 12
-- Filament Admin (v3)
-- Blade Template & Livewire
-- Tailwind CSS, Bootstrap 5, daisyUI, Animate.css
-- MySQL
-- Laravel Seeder & Factory
+## 🎯 Tujuan Pengembangan
+
+Proyek ini dikembangkan dengan tujuan untuk mendigitalisasi proses bisnis F&B (Food and Beverage), mengubah sistem konvensional (catat kertas) menjadi serba terpusat. Dengan SIM-C, diharapkan cafe dapat:
+1. Meminimalisir kesalahan pesanan (*human error*) melalui pemesanan digital langsung dari meja.
+2. Mempercepat alur pembayaran dengan integrasi QRIS / Transfer Bank secara otomatis.
+3. Memastikan manajemen meja (*table seating*) yang tertata rapi melalui sistem reservasi yang terotomatisasi.
+4. Memudahkan pemilik usaha (Admin) dalam memanajemen stok menu, konten promosi, hingga pelacakan omset secara langsung.
 
 ---
 
-## 🧑‍🍳 Cara Instalasi (Localhost)
-Ikuti langkah berikut untuk menjalankan aplikasi:
+## ✨ Fitur Utama Sistem
 
-1. Ekstrak file `kapecihanjuang.zip`
-2. Install dependency dengan Composer (versi **2.8.3+**):
-   jalankan perintah composer install atau composer update
-   > Pastikan PHP **8.2+** sudah terpasang (rekomendasi PHP 8.4).
-3. Salin file `.env` dari `.env.example`
-4. Generate key aplikasi:
-   php artisan key:generate
-5. Sesuaikan konfigurasi `.env`, contoh:
-   APP_NAME=KapecihanJuang
-   APP_ENV=local
-   APP_URL=http://127.0.0.1:8000
-
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=kapecihanjuang
-   DB_USERNAME=root
-   DB_PASSWORD=
-6. Buat database `kapecihanjuang` (via phpMyAdmin atau CLI)
-7. Import file kapecihanjuang.sql ke database kamu
-8. Jalankan server:
-   php artisan serve
-
-   Buka http://127.0.0.1:8000
+1. **Digital Ordering & Checkout System:** Pelanggan dapat melihat menu, memesan, dan langsung melakukan proses *checkout*.
+2. **Integrasi Payment Gateway Midtrans:** Mendukung berbagai metode pembayaran instan (QRIS, GoPay, Virtual Account) dengan pembaruan status pembayaran otomatis (*paid/unpaid*).
+3. **Smart Table Reservation:** Formulir reservasi (*booking*) meja yang cerdas. Status meja akan otomatis berubah menjadi "reservasi" atau "isi" saat digunakan untuk mencegah *double-booking*.
+4. **Kitchen Display Status:** Manajemen aliran pesanan dengan indikator pelacakan status makanan (misalnya: status *"dimasak"* hingga *"selesai"*).
+5. **Interactive Admin Dashboard (Filament):** Panel kontrol elegan dengan fungsionalitas CRUD penuh untuk manajemen Menu, Kategori, Meja, Pesanan, Reservasi, hingga Chef dan Testimoni pelanggan.
+6. **Dynamic Landing Page Content:** Tampilan depan (beranda) dikelola secara dinamis lewat database, termasuk pengaturan *Hero Slider*, informasi *About*, daftar *Chef*, dan *Featured Events*.
 
 ---
 
-## 🔑 Akses Admin
-- URL: http://127.0.0.1:8000/admin
-- Email: admin@example.com
-- Password: admin@example.com
+## 🛠️ Teknologi dan Komponen
 
-Jika user admin belum ada, buat manual via Tinker:
-\App\Models\User::create([
-  'name' => 'Admin',
-  'email' => 'admin@example.com',
-  'password' => bcrypt('password'),
-]);
+Proyek ini dibangun di atas tumpukan teknologi modern untuk memastikan performa, skalabilitas, dan keamanan:
 
----
-
-## 🪠 Troubleshooting
-
-| Masalah                                      | Solusi                                                                           |
-| -------------------------------------------- | -------------------------------------------------------------------------------- |
-| `Class not found` saat `php artisan migrate` | Jalankan `composer dump-autoload`                                                |
-| Gagal konek ke database                      | Periksa `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` di `.env`                |
-| Akses `/admin/login` tapi halaman kosong     | Jalankan `php artisan migrate --seed` dan pastikan user admin ada                |
-| Halaman blank                                | Periksa log di `storage/logs/laravel.log`                                        |
-| Error ekstensi `pdo_mysql`                   | Aktifkan ekstensi di `php.ini`                                                   |
+- **Framework Backend:** Laravel 12 (PHP ^8.2)
+- **Framework Admin Panel:** Filament PHP v3 (TALL Stack)
+- **Database:** MySQL
+- **Frontend & Styling:** Tailwind CSS v4, Vite, Blade Templating
+- **Payment Gateway:** Midtrans (Midtrans-PHP API)
+- **Arsitektur:** Model-View-Controller (MVC) Pattern
 
 ---
 
-## 📦 Perintah Composer & Artisan yang Berguna
-composer install           # Install dependency
-composer update            # Update package
-php artisan storage:link   # Buat symbolic link untuk upload
-php artisan serve          # Jalankan server
-php artisan tinker         # CLI query langsung
+## 🗄️ Skema Relasi Database (ERD)
 
----
+Struktur data aplikasi ini terdiri dari beberapa entitas utama yang saling berelasi kuat. Berikut adalah pemetaan *Entity-Relationship Diagram (ERD)* yang mendasari sistem manajemen cafe ini:
 
-## 📄 Lisensi
-Proyek ini dikembangkan dan dimiliki oleh **mulaidigital.com**.
-Silakan gunakan kode ini dengan bijak. Untuk kerjasama hubungi:
-📧 deniekapratama07@gmail.com
+```mermaid
+erDiagram
+    TABLE ||--o{ RESERVATION : "menerima / dipesan melalui"
+    TABLE ||--o{ ORDER : "tempat transaksi"
+    ORDER ||--|{ ORDER_ITEM : "terdiri atas"
+    MENU_ITEM ||--o{ ORDER_ITEM : "sebagai rincian pesanan"
+    MENU_CATEGORY ||--o{ MENU_ITEM : "mengelompokkan"
 
----
-
-## 📬 Kontak
-- 🌐 Website: https://mulaidigital.com
-- ✉️ Email: deniekapratama07@gmail.com
-
----
-
-> Terima kasih
+    TABLE {
+        bigint id PK
+        string table_number "No. Meja"
+        string status "kosong / reservasi / isi"
+    }
+    MENU_CATEGORY {
+        bigint id PK
+        string name "Kategori (Misal: Makanan/Minuman)"
+    }
+    MENU_ITEM {
+        bigint id PK
+        bigint menu_category_id FK
+        string name "Nama Menu"
+        decimal price "Harga Menu"
+    }
+    ORDER {
+        bigint id PK
+        bigint table_id FK
+        decimal total_price "Total Harga"
+        string status "dimasak / selesai"
+        string payment_status "unpaid / paid / failed"
+        string snap_token "Token Midtrans"
+    }
+    ORDER_ITEM {
+        bigint id PK
+        bigint order_id FK
+        bigint menu_item_id FK
+        int quantity "Jumlah"
+        decimal price "Harga Satuan saat dipesan"
+    }
+    RESERVATION {
+        bigint id PK
+        bigint table_id FK
+        string name "Nama Pemesan"
+        string phone "Nomor Kontak"
+        date date "Tanggal Booking"
+        time time "Jam Booking"
+        string status "pending / confirmed"
+    }
